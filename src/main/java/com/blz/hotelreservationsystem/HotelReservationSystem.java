@@ -25,8 +25,6 @@ public class HotelReservationSystem {
         hotel.setWeekDayRates(weekDayRates);
         hotel.setWeekEndRates(weekEndRates);
         hotelMap.put(hotelNumber, hotel);
-
-
         return true;
     }
 
@@ -49,6 +47,5 @@ public class HotelReservationSystem {
         return hotelStream.get();
 
     }
-
 
 }
