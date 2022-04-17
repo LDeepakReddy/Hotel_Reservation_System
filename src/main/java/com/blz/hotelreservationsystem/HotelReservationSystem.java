@@ -17,29 +17,28 @@ public class HotelReservationSystem {
     public static void main(String[] args) {
         System.out.println("Welcome to Hotel Reservation System");
         HotelReservationSystem hotelReservation = new HotelReservationSystem();
-        hotelReservation.addHotel("Lakewood", 3, 110, 90);
-        hotelReservation.addHotel("Bridgewood", 4, 150, 50);
-        hotelReservation.addHotel("Ridgewood", 5, 220, 150);
+        hotelReservation.addHotel("Lakewood", 3, 110, 90, 80, 80);
+        hotelReservation.addHotel("Bridgewood", 4, 150, 50, 110, 50);
+        hotelReservation.addHotel("Ridgewood", 5, 220, 150, 100, 40);
 
-        hotelReservation.displayHotel();
+        hotelReservation.printHotelList();
 
-        LocalDate startDate = LocalDate.of(2021, Month.SEPTEMBER, 11);
-        LocalDate endDate = LocalDate.of(2021, Month.SEPTEMBER, 12);
-        Hotel hotelName = hotelReservation.getCheapestBestRatedHotel(startDate, endDate);
-        System.out.println("The best rated hotel is : \n " + hotelName);
     }
 
 
-
     ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
+    public Hotel hotel;
     public static double cheapestPrice;
 
-    public void addHotel(String hotelName, int rating, double weekdayRegularCustomerCost, double weekendRegularCustomerCost) {
+    public void addHotel(String hotelName, int rating, double weekdayRegularCustomerCost, double weekendRegularCustomerCost,
+                         double weekdayRewardCustomerCost, double weekendRewardCustomerCost) {
         Hotel hotel = new Hotel();
         hotel.setHotelName(hotelName);
         hotel.setRating(rating);
         hotel.setWeekdayRegularCustomerCost(weekdayRegularCustomerCost);
         hotel.setWeekendRegularCustomerCost(weekendRegularCustomerCost);
+        hotel.setWeekdayRewardCustomerCost(weekdayRewardCustomerCost);
+        hotel.setWeekendRewardCustomerCost(weekendRewardCustomerCost);
         hotelList.add(hotel);
     }
 
