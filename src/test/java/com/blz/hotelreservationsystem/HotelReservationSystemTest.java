@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class HotelReservationSystemTest {
     HotelReservationSystem hotelReservation = new HotelReservationSystem();
     @Test
-    public void givenHotelDetails_WhenValuesEnteredAreCorrect_ShoulReturnTrue() {
+    public void givenHotelDetails_WhenValuesEnteredAreCorrect_ShouldReturnTrue() {
         hotelReservation.addHotel("Lakewood", 3, 110, 90, 80, 80);
         hotelReservation.addHotel("Bridgewood", 4, 150, 50, 110, 50);
         hotelReservation.addHotel("Ridgewood", 5, 220, 150, 100, 40);

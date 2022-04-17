@@ -25,7 +25,8 @@ public class HotelReservationSystem {
 
         LocalDate startDate = LocalDate.of(2021, Month.SEPTEMBER, 11);
         LocalDate endDate = LocalDate.of(2021, Month.SEPTEMBER, 12);
-        Hotel hotel = hotelReservation.getBestRatedHotel("reward", startDate, endDate);
+        Hotel hotel = hotelReservation.getBestRatedHotel("regular", startDate, endDate);
+        Hotel hotel1 = hotelReservation.getBestRatedHotel(" reward ", startDate, endDate);
         System.out.println(hotel);
 
     }
