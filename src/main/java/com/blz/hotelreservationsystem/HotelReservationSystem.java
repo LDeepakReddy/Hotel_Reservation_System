@@ -38,14 +38,24 @@ public class HotelReservationSystem {
         }
     }
 
-    public Hotel cheapestHotel(LocalDate startDate, LocalDate endDate) {
+    public Hotel cheapestHotelOnWeekDay(LocalDate startDate, LocalDate endDate) {
         long numOfDaysBetween = ChronoUnit.DAYS.between(startDate, endDate);
         Optional<Hotel> hotelStream = hotelMap.values().stream().limit(numOfDaysBetween).min(Comparator.comparing(Hotel::getWeekDayRates));
-        System.out.println(LocalDate.of(2020, 03, 16).getDayOfWeek());
-        System.out.println(LocalDate.of(2020, 03, 17).getDayOfWeek());
+        System.out.println(LocalDate.of(2020, 9, 11).getDayOfWeek());
+        System.out.println(LocalDate.of(2020, 9, 12).getDayOfWeek());
 
         return hotelStream.get();
 
     }
+    public Hotel cheapestHotelOnWeekend(LocalDate startDate, LocalDate endDate) {
+        long numOfDaysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+        Optional<Hotel> hotelStream = hotelMap.values().stream().limit(numOfDaysBetween).min(Comparator.comparing(Hotel::getWeekEndRates));
+        System.out.println(LocalDate.of(2020, 9, 11).getDayOfWeek());
+        System.out.println(LocalDate.of(2020, 9, 12).getDayOfWeek());
+
+        return hotelStream.get();
+
+    }
+
 
 }

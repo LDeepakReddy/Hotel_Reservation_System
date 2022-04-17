@@ -27,9 +27,9 @@ public class HotelReservationSystemTest {
         hotels.addHotel("Hotel-2", "BridgeWood", 160, 60);
         hotels.addHotel("Hotel-3", "RidgeWood", 220, 150);
 
-        LocalDate startDate = LocalDate.of(2020, 03, 16);
-        LocalDate endDate = LocalDate.of(2020, 03, 17);
-        Hotel hotel = hotels.cheapestHotel(startDate, endDate);
+        LocalDate startDate = LocalDate.of(2020, 9, 11);
+        LocalDate endDate = LocalDate.of(2020, 9, 12);
+        Hotel hotel = hotels.cheapestHotelOnWeekend(startDate, endDate);
         Assert.assertEquals("LakeWood", hotel.getHotelName());
         System.out.println("Cheapest hotel is " + hotel.getHotelName());
 
