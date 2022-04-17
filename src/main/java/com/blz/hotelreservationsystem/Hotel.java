@@ -1,20 +1,19 @@
 package com.blz.hotelreservationsystem;
 
 public class Hotel {
-    String hotelNumber;
-    String hotelName;
-    int weekDayRates;
-    int weekEndRates;
+    private String hotelName;
+    private int rating;
+    private double weekdayRegularCustomerCost;
+    private double weekendRegularCustomerCost;
 
-    public Hotel() {
-
+    public Hotel(String hotelName, int rating, double weekdayRegularCustomerCost, double weekendRegularCustomerCost) {
+        this.hotelName = hotelName;
+        this.rating = rating;
+        this.weekdayRegularCustomerCost = weekdayRegularCustomerCost;
+        this.weekendRegularCustomerCost = weekendRegularCustomerCost;
     }
 
-    public Hotel(String hotelName, int weekDayRates, int weekEndRates) {
-        this.hotelNumber = hotelNumber;
-        this.hotelName = hotelName;
-        this.weekDayRates = weekDayRates;
-        this.weekEndRates = weekEndRates;
+    public Hotel() {
     }
 
     public String getHotelName() {
@@ -25,27 +24,36 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public int getWeekDayRates() {
-        return weekDayRates;
+    public int getRating() {
+        return rating;
     }
 
-    public void setWeekDayRates(int weekDayRates) {
-        this.weekDayRates = weekDayRates;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
-    public int getWeekEndRates() {
-        return weekEndRates;
+    public double getWeekdayRegularCustomerCost() {
+        return weekdayRegularCustomerCost;
     }
 
-    public void setWeekEndRates(int weekEndRates) {
-        this.weekEndRates = weekEndRates;
+    public void setWeekdayRegularCustomerCost(double weekdayRegularCustomerCost) {
+        this.weekdayRegularCustomerCost = weekdayRegularCustomerCost;
     }
 
-    public String getHotelNumber() {
-        return hotelNumber;
+    public double getWeekendRegularCustomerCost() {
+        return weekendRegularCustomerCost;
     }
 
-    public void setHotelNumber(String hotelNumber) {
-        this.hotelNumber = hotelNumber;
+    public void setWeekendRegularCustomerCost(double weekendRegularCustomerCost) {
+        this.weekendRegularCustomerCost = weekendRegularCustomerCost;
     }
+
+    @Override
+    public String toString() {
+        return " \n Hotel [hotelName=" + hotelName + ", rating=" + rating + ", weekdayRegularCustomerCost="
+                + weekdayRegularCustomerCost + ", weekendRegularCustomerCost=" + weekendRegularCustomerCost + "]";
+    }
+
+
+
 }
